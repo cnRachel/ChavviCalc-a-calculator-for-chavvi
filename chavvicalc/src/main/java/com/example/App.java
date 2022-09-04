@@ -7,8 +7,8 @@ import java.util.*;
  */
 public class App {
 
-  static float A = 0.0;
-  static float B = 0.0;
+  static float A = 0f;
+  static float B = 0f;
   public static void main(String[] args) {
 
     
@@ -47,7 +47,10 @@ public class App {
     System.out.println("ChavviCalc");
     printMenuLine();
     
-    System.out.println("A = " + A + "\t\tB = " + B);
+    System.out.print("A = ");
+    System.out.print(String.format("%.3f", A));
+    System.out.print("\tB = ");
+    System.out.println(String.format("%.3f", B));
 
     printMenuLine();
 
@@ -84,6 +87,43 @@ public class App {
     switch (command) {
       case 'q':
         System.out.println("Thank you for using Chavvi Calc");
+        break;
+      case 'a':
+        System.out.print("Enter a number: ");
+        if (scan.hasNextFloat()) {
+          A = scan.nextFloat();
+        } else {
+          System.out.println("ERROR: the value entered is not a floating point number");
+          scan.nextLine();
+        }
+        break;
+      case 'b':
+        if (scan.hasNextFloat()) {
+          B = scan.nextFloat();
+        } else {
+          System.out.println("ERROR: the value entered is not a floating point number");
+          scan.nextLine();
+        }
+        break;
+      case '+':
+        A = A + B;
+        break;
+      case '-':
+        A = A - B;
+        break;
+      case '*':
+        A = A * B;
+        break;
+      case '/':
+        if (B == 0) {
+          System.out.println("ERROR: Unable to divide by 0");
+          break;
+        }
+        A = A / B;
+        break;
+      case 'c':
+        A = 0;
+        B = 0;
         break;
       default:
         System.out.println("ERROR: Unknown commmand");
