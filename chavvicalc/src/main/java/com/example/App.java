@@ -94,16 +94,17 @@ public class App {
           A = scan.nextFloat();
         } else {
           System.out.println("ERROR: the value entered is not a floating point number");
-          scan.nextLine();
         }
+        scan.nextLine();
         break;
       case 'b':
+        System.out.print("Enter a number: ");
         if (scan.hasNextFloat()) {
           B = scan.nextFloat();
         } else {
           System.out.println("ERROR: the value entered is not a floating point number");
-          scan.nextLine();
         }
+        scan.nextLine();
         break;
       case '+':
         A = A + B;
@@ -132,4 +133,5 @@ public class App {
 
     return success;
   }
+
 }
