@@ -7,7 +7,12 @@ import java.util.*;
  */
 public class App {
 
+  static float A = 0.0;
+  static float B = 0.0;
   public static void main(String[] args) {
+
+    
+
     Scanner scan = new Scanner(System.in);
     Character command = '_';
 
@@ -41,7 +46,18 @@ public class App {
     printMenuLine();
     System.out.println("ChavviCalc");
     printMenuLine();
+    
+    System.out.println("A = " + A + "\t\tB = " + B);
 
+    printMenuLine();
+
+    printMenuCommand('a', "Enter a value for A");
+    printMenuCommand('b', "Enter a value for B");
+    printMenuCommand('+', "Add");
+    printMenuCommand('-', "Subtract");
+    printMenuCommand('*', "Multiply");
+    printMenuCommand('/', "Divide");
+    printMenuCommand('c', "Clear");
     printMenuCommand('q', "Quit");
 
     printMenuLine();
